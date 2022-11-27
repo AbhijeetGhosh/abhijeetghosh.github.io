@@ -80,14 +80,14 @@
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-8 text-center">
-            <h1>ANPR</h1>
+            <h1>Vibration Analysis</h1>
             <div class="mx-auto w-75">
-              <p>Realtime Automatic Number Plate Recognition System</p>
+              <p>Using Ai to find anomalies, Remaining usefull life and root fault analysis of various mechanical equipments</p>
             </div>
           </div>
         </div>
       </div>
-        
+
       
       <a href="#next-section" class="smoothscroll scroll-button">
         <span class=" icon-keyboard_arrow_down"></span>
@@ -105,59 +105,75 @@
         </div>
         <div class="row mb-5">
             <div class="col-sm-6 col-md-6 mb-4 mb-lg-0 col-lg-3">
-              <strong class="d-block text-black">Client</strong>
-              Xcitech, Inc.
+              <strong class="d-block text-black">COMPANY</strong>
+              Vadict.inc
             </div>
             <div class="col-sm-6 col-md-6 mb-4 mb-lg-0 col-lg-3">
               <strong class="d-block text-black">Role</strong>
-              Complete deployment
+              AI-ML Engineer
             </div>
             <div class="col-sm-6 col-md-6 mb-4 mb-lg-0 col-lg-3">
-              <strong class="d-block text-black">Year Started</strong>
-              2019
+              <strong class="d-block text-black">Major Clients</strong>
+              IOCL
             </div>
             <div class="col-sm-6 col-md-6 mb-4 mb-lg-0 col-lg-3">
-              <strong class="d-block text-black">Github URL</strong>
-              <a href="#" class="spepcial_link">Visit Website</a>
+              <strong class="d-block text-black">Know More!</strong>
+              <a href="https://vadict.com/condition-monitoring-suite/" class="spepcial_link">Visit Website</a>
             </div>
           </div>
         <div class="row mb-5 mt-5">
 
           <div class="col-lg-6">
             <figure>
-              <a href="images/anprr.jpg" data-fancybox="gallery"><img src="images/anprr.jpg" alt="Image" class="img-fluid"></a>
+              <a href="images/anomaly.png" data-fancybox="gallery"><img src="images/anomaly.png" alt="Image" class="img-fluid"></a>
             </figure>
             <figure>
-              <a href="images/anpr2.jpg" data-fancybox="gallery"><img src="images/anpr2.jpg" alt="Image" class="img-fluid"></a>
+              <a href="images/rul.png" data-fancybox="gallery"><img src="images/rul.png" alt="Image" class="img-fluid"></a>
             </figure>
-            <figure class="mb-0">
+            <!-- <figure class="mb-0">
               <a href="images/anpr3.jpeg" data-fancybox="gallery"><img src="images/anpr3.jpeg" alt="Image" class="img-fluid"></a>
-            </figure>
+            </figure> -->
           </div>
           <div class="col-lg-5 ml-auto h-100 jm-sticky-top">
             <div class="mb-5">
               <h3 class="mb-4 h4">Collecting the data</h3>
               
-              <p class="mb-0">I developed python webscrapers to crawl through internet and collected around 10,000 images of cars in 
-                all positions and angles with their number plate visible to train an accurate ML model without overfitting
+              <p class="mb-0">Vibration data mainly consists of velocity and acceleration magnitudes along with temperature and often various derived 
+                quantities like different fourrier transforms and signal envelops signifying different degradation causes ands tates.
+
+                Data was collected over a period of 2 years from two sites of IOCL, at Bhubaneshwar and Delhi sites from mainly 3 different types of equipments.
+                Pumps, Compressors, Fire Engines of varying make and models. Vibration sensors were installed on site for manual condition-monitoring
+                before it can be automated. The sensors are manufactured in house along with the dashboar software for monitoring and displaying readings in realtime.
               </p>
             </div>
 
             <div class="mb-5">
-              <h3 class="mb-4 h4">Developing the image Recognition software</h3>
+              <h3 class="mb-4 h4">Data Preprocessing and Training</h3>
               
-              <p class="mb-0">Yolov2 was used, implemented in python. Trained it to around 5k epox taking almost 3 days to prepare on 
-                GTX 1050 graphic hardware.
+              <p class="mb-0"> Working with a team of research scientists and data engineers various research papers were implemented to clean data and extract
+                usable trends. Data preprocessing mainly involved performing multiple smootheing techniques, domain specific filtering and fitting different curves
+                to project the signal for interpolation. Since the equipments have specific behaviour according to their make and models, equations were
+                developed specific to the domain. Since the data isn't labelled, to form a trainable dataset various forms of labelling was performed
+                generating an output health indicator under the supervision of research scientists with domain expertise.
+              </p>
+              <p class="mb-0">
+                Model training were performed by utilizing around 21 regressions models along with LSTMs and autoencoders and comparing 
+                the performance of each to finalize one and tuning it for inferencing. Autoencoders were used for anomaly usecases whereas
+                Regressional algorithms were used for predicting remainng useful lives of the equipments.
               </p>
               <p class = "mb-0"></p>
             </div>
 
             <div class="mb-5">
-              <h3 class="mb-4 h4">Developing an unique OCR pipeline</h3>
+              <h3 class="mb-4 h4">Retraining and Deployment</h3>
               
-              <p class="mb-0">I developed an unique ocr pipeline so the detected image of number plate can be passed through this OCR system and i 
-                can detect the letters in the cropped image of the plate. A number of image processing methdologies were used including adaptive thresholding and
-                a different forms of binarization and smoothening.    
+              <p class="mb-0">It's a well known phenomena that once a model is deployed it's accuracy starts decreasing. Either because the environment has evolved
+                or their are new parameters at work influencing the system. This is called model drift. An inhouse autu ML software was developed 
+                to perform retraining by selecting appropriate configuration and automating model training. 
+              </p>
+              <p class="mb-0">
+                Deployment was done by using the autoML software and adding provisions to integrate the realtime inferencing on both the
+                dashboard webapp as well as inferencing on edge (IOT integration) depending on the usecase.
               </p>
             </div>
 
@@ -180,9 +196,9 @@
 
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2">
-            <figure class="mb-0">
+            <!-- <figure class="mb-0">
               <a href="images/anpr4.jpeg" data-fancybox="gallery"><img src="images/anpr4.jpeg" alt="Image" class="img-fluid"></a>
-            </figure>
+            </figure> -->
           </div>
           <div class="col-lg-5 mr-auto h-100 jm-sticky-top  order-2 order-lg-1">
             
@@ -192,13 +208,13 @@
             <ul class="ul-check success mt-5 list-unstyled mb-0">
               <li>Python3</li>
               <li>Tensorflow</li>
-              <li>Web scraping</li>
-              <li>YoloV2</li>
-              <li>iot</li>
-              <li>Raspberri Pi</li>
-              <li>OCR</li>
-              <li>Tesseract</li>
-              <li>Extensive Research on Image Processing</li>
+              <li>Pycaret</li>
+              <li>Curve Fitting and mathematical modelling</li>
+              <li>Interpolation and statistical learning methods</li>
+              <li>MLflow</li>
+              <li>IOT</li>
+              <li>Web app and IOT integration for inferencing</li>
+              <li>Extensive Research on Time series data processing and hyper parameter tuning</li>
             </ul>
             
           </div>
